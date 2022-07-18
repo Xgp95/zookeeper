@@ -30,10 +30,10 @@ public class ZkClient {
         zooKeeper = new ZooKeeper(connectStr, sessionTimeout, new Watcher() {
             @Override
             public void process(WatchedEvent watchedEvent) {
-                System.out.println("###>");
+                System.out.println("###>" + watchedEvent.getPath() + "~~~>" + watchedEvent.getType());
             }
         });
-        System.out.println("===>" + (zooKeeper == null));
+//        System.out.println("===>" + (zooKeeper == null));
 //        Thread.sleep(Integer.MAX_VALUE);
 //        try {
 //            List<String> zooKeeperChildren = zooKeeper.getChildren("/", true);
